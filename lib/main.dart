@@ -2,8 +2,8 @@
 
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:startup_repo/core/widgets/loading.dart';
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/core/widgets/loading.dart';
+import 'package:expense_tracker/imports.dart';
 import 'core/theme/design_helper.dart';
 import 'features/theme/presentation/controller/theme_controller.dart';
 import 'core/helper/get_di.dart' as di;
@@ -11,7 +11,7 @@ import 'core/theme/dark_theme.dart';
 import 'core/theme/light_theme.dart';
 import 'core/utils/messages.dart';
 import 'core/utils/scroll_behavior.dart';
-import 'features/home/presentation/view/home.dart';
+import 'features/expense/presentation/view/expense_dashboard_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
                   );
                 },
               ),
-              home: const HomeScreen(),
+              home: const ExpenseDashboardScreen(),
             );
           }),
         ),

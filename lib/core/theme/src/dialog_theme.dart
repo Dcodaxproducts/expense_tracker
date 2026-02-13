@@ -1,9 +1,9 @@
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/imports.dart';
 
-DialogTheme get dialogThemeLight => DialogTheme(
+DialogThemeData get dialogThemeLight => DialogThemeData(
       shape: AppRadius.circular16Shape,
       backgroundColor: backgroundColorLight,
       insetPadding: AppPadding.padding32,
     );
 
-DialogTheme get dialogThemeDark => dialogThemeLight.copyWith(backgroundColor: backgroundColorDark);
+DialogThemeData get dialogThemeDark => dialogThemeLight.copyWith(backgroundColor: backgroundColorDark);

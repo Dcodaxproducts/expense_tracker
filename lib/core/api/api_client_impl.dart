@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:http/http.dart' as http;
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/imports.dart';
 import '../helper/connectivity.dart';
 import 'error.dart';
 import 'api_client.dart';

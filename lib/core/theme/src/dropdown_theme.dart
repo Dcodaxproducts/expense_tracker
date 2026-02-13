@@ -1,6 +1,5 @@
-import 'package:startup_repo/core/design/app_radius.dart';
-import 'package:startup_repo/imports.dart';
-import 'package:startup_repo/core/theme/src/input_decoration_theme.dart';
+import 'package:expense_tracker/imports.dart';
+import 'package:expense_tracker/core/theme/src/input_decoration_theme.dart';
 
 DropdownMenuThemeData get dropdownMenuThemeLight => DropdownMenuThemeData(
       inputDecorationTheme: inputDecorationThemeLight,

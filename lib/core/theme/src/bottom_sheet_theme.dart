@@ -1,4 +1,4 @@
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/imports.dart';
 
 BottomSheetThemeData get bottomSheetThemeLight => BottomSheetThemeData(
       shape: RoundedRectangleBorder(borderRadius: AppRadius.top(AppRadius.radius16)),

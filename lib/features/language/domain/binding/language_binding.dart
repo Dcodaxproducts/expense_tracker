@@ -1,5 +1,5 @@
-import 'package:startup_repo/features/language/data/repository/localization_repo_interface.dart';
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/features/language/data/repository/localization_repo_interface.dart';
+import 'package:expense_tracker/imports.dart';
 import '../../data/repository/localization_repo.dart';
 import '../service/localization_service_impl.dart';
 import '../service/localization_service.dart';

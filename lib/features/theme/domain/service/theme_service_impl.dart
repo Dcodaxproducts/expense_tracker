@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:startup_repo/features/theme/data/repository/theme_repo.dart';
+import 'package:expense_tracker/features/theme/data/repository/theme_repo.dart';
 import 'theme_service.dart';
 
 class ThemeServiceImpl implements ThemeService {

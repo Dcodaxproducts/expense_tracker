@@ -1,5 +1,4 @@
-import 'package:startup_repo/core/design/app_text.dart';
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/imports.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;

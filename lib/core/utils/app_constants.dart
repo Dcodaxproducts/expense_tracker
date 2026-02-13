@@ -1,6 +1,6 @@
 class AppConstants {
   // app name and package name
-  static String appName = 'Startup Repo';
+  static String appName = 'Expense Tracker';
 
   // Base URL
   static String baseUrl = 'https://api.example.com/';

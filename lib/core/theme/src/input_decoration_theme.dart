@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:startup_repo/core/design/app_padding.dart';
-import 'package:startup_repo/core/design/app_radius.dart';
-import 'package:startup_repo/core/design/colors.dart';
+import 'package:expense_tracker/core/design/app_padding.dart';
+import 'package:expense_tracker/core/design/app_radius.dart';
+import 'package:expense_tracker/core/design/colors.dart';
 
 InputDecorationTheme get inputDecorationThemeLight => InputDecorationTheme(
       floatingLabelBehavior: FloatingLabelBehavior.never,

@@ -1,4 +1,4 @@
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/imports.dart';
 import '../../data/repository/splash_repo_impl.dart';
 import '../../data/repository/splash_repo.dart';
 import '../../presentation/controller/splash_controller.dart';

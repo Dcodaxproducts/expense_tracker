@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:startup_repo/core/theme/src/text_theme.dart';
-import 'package:startup_repo/core/design/colors.dart';
+import 'package:expense_tracker/core/theme/src/text_theme.dart';
+import 'package:expense_tracker/core/design/colors.dart';
 import 'src/dropdown_theme.dart';
 import 'src/elevated_button_theme.dart';
 import 'src/appbar_theme.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:startup_repo/features/language/data/repository/localization_repo_interface.dart';
+import 'package:expense_tracker/features/language/data/repository/localization_repo_interface.dart';
 import 'localization_service.dart';
 
 class LocalizationServiceImpl implements LocalizationService {

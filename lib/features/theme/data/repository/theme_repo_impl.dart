@@ -1,4 +1,4 @@
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/imports.dart';
 import 'theme_repo.dart';
 
 class ThemeRepoImpl implements ThemeRepo {

@@ -1,4 +1,4 @@
-import 'package:startup_repo/imports.dart';
+import 'package:expense_tracker/imports.dart';
 
 TextTheme _createTextTheme(TextTheme base, Color color) {
   base = base.apply(displayColor: color, bodyColor: color);

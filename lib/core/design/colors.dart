@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
-const Color primaryColor = Color(0xFF6949FF);
-const Color secondaryColor = Color(0xFFD27579);
+const Color primaryColor = Color(0xFF2E7D32);
+const Color secondaryColor = Color(0xFF66BB6A);
+
+// category colors
+const Color incomeColor = Color(0xFF2E7D32);
+const Color expenseColor = Color(0xFFD32F2F);
 
 // background colors
-const Color backgroundColorLight = Color(0xFFFFFFFF);
+const Color backgroundColorLight = Color(0xFFF5F5F5);
 const Color backgroundColorDark = Color(0xFF1E1E1E);
 
 // card colors
-const Color cardColorLight = Color(0xFFF5F5F5);
+const Color cardColorLight = Color(0xFFFFFFFF);
 const Color cardColorDark = Color(0xFF2A2A2A);
 
 const Color transparent = Colors.transparent;

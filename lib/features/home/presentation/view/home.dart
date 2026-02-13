@@ -1,6 +1,6 @@
-import 'package:startup_repo/features/theme/presentation/controller/theme_controller.dart';
-import 'package:startup_repo/core/widgets/confirmation_dialog.dart';
-import 'package:startup_repo/core/widgets/confirmation_sheet.dart';
+import 'package:expense_tracker/features/theme/presentation/controller/theme_controller.dart';
+import 'package:expense_tracker/core/widgets/confirmation_dialog.dart';
+import 'package:expense_tracker/core/widgets/confirmation_sheet.dart';
 import '../../../../imports.dart';
 
 class HomeScreen extends StatelessWidget {
