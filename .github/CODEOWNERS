@@ -1,0 +1,43 @@
+# CODEOWNERS - Flutter Repository
+# This file defines code ownership for automated review requests
+# Customize the paths and owners based on your team structure
+
+# Default owners for everything
+* @team-lead
+
+# Core architecture and infrastructure
+/lib/core/ @senior-dev @team-lead
+/lib/core/api/ @senior-dev @team-lead
+/lib/core/theme/ @ui-dev @senior-dev
+/lib/core/design/ @ui-dev @senior-dev
+/lib/core/helper/ @senior-dev @team-lead
+/lib/core/utils/ @senior-dev @team-lead
+/lib/core/widgets/ @ui-dev @senior-dev
+
+# Feature-specific ownership (customize per repository)
+/lib/features/auth/ @auth-dev
+/lib/features/payment/ @payment-dev
+/lib/features/profile/ @auth-dev
+/lib/features/home/ @ui-dev
+/lib/features/settings/ @ui-dev
+
+# Configuration and build files
+/android/ @team-lead @senior-dev
+/ios/ @team-lead @senior-dev
+pubspec.yaml @senior-dev @team-lead
+analysis_options.yaml @senior-dev @team-lead
+
+# GitHub workflows and CI/CD
+/.github/ @team-lead
+/.github/workflows/ @team-lead
+
+# Documentation
+*.md @team-lead
+/docs/ @team-lead
+
+# Assets and localization
+/assets/languages/ @ui-dev @team-lead
+/assets/images/ @ui-dev
+
+# Tests
+/test/ @senior-dev @team-lead
