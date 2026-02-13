@@ -110,10 +110,10 @@ class _AddAccountScreenState extends State<AddAccountScreen> {
                               duration: const Duration(milliseconds: 200),
                               padding: EdgeInsets.symmetric(horizontal: 12.sp, vertical: 8.sp),
                               decoration: BoxDecoration(
-                                color: isSelected ? type.color.withValues(alpha: 0.2) : cardColorLight,
+                                color: isSelected ? type.color.withValues(alpha: 0.2) : Theme.of(context).cardColor,
                                 borderRadius: AppRadius.circular8,
                                 border: Border.all(
-                                  color: isSelected ? type.color : dividerColorLight,
+                                  color: isSelected ? type.color : Theme.of(context).dividerColor,
                                   width: 1.5.sp,
                                 ),
                               ),
@@ -126,7 +126,7 @@ class _AddAccountScreenState extends State<AddAccountScreen> {
                                     type.displayName,
                                     style: context.font12.copyWith(
                                       fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
-                                      color: isSelected ? type.color : null,
+                                      color: isSelected ? type.color : Theme.of(context).textTheme.bodyMedium?.color,
                                     ),
                                   ),
                                 ],

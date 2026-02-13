@@ -26,7 +26,7 @@ class ExpenseCard extends StatelessWidget {
           borderRadius: AppRadius.circular12,
           boxShadow: [
             BoxShadow(
-              color: shadowColorLight.withValues(alpha: 0.3),
+              color: Theme.of(context).shadowColor.withValues(alpha: 0.3),
               blurRadius: 4.sp,
               offset: Offset(0, 2.sp),
             ),
@@ -60,7 +60,7 @@ class ExpenseCard extends StatelessWidget {
                   SizedBox(height: 2.sp),
                   Text(
                     '${expense.category.displayName} • ${DateFormat('MMM dd').format(expense.date)}',
-                    style: context.font12.copyWith(color: hintColorLight),
+                    style: context.font12.copyWith(color: Theme.of(context).hintColor),
                   ),
                 ],
               ),
@@ -80,7 +80,7 @@ class ExpenseCard extends StatelessWidget {
                 SizedBox(height: 2.sp),
                 GestureDetector(
                   onTap: onDelete,
-                  child: Icon(Iconsax.trash, size: 16.sp, color: hintColorLight),
+                  child: Icon(Iconsax.trash, size: 16.sp, color: Theme.of(context).hintColor),
                 ),
               ],
             ),

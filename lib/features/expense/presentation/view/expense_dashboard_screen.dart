@@ -82,16 +82,16 @@ class _ExpenseDashboardScreenState extends State<ExpenseDashboardScreen> {
                         child: Center(
                           child: Column(
                             children: [
-                              Icon(Iconsax.wallet_3, size: 64.sp, color: hintColorLight),
+                              Icon(Iconsax.wallet_3, size: 64.sp, color: Theme.of(context).hintColor),
                               SizedBox(height: 16.sp),
                               Text(
                                 'No expenses yet',
-                                style: context.font16.copyWith(color: hintColorLight),
+                                style: context.font16.copyWith(color: Theme.of(context).hintColor),
                               ),
                               SizedBox(height: 4.sp),
                               Text(
                                 'Tap + to add your first expense',
-                                style: context.font12.copyWith(color: hintColorLight),
+                                style: context.font12.copyWith(color: Theme.of(context).hintColor),
                               ),
                             ],
                           ),

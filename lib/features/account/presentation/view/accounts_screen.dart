@@ -60,16 +60,16 @@ class _AccountsScreenState extends State<AccountsScreen> {
                         child: Center(
                           child: Column(
                             children: [
-                              Icon(Iconsax.bank, size: 64.sp, color: hintColorLight),
+                              Icon(Iconsax.bank, size: 64.sp, color: Theme.of(context).hintColor),
                               SizedBox(height: 16.sp),
                               Text(
                                 'No accounts yet',
-                                style: context.font16.copyWith(color: hintColorLight),
+                                style: context.font16.copyWith(color: Theme.of(context).hintColor),
                               ),
                               SizedBox(height: 4.sp),
                               Text(
                                 'Tap + to add your first account',
-                                style: context.font12.copyWith(color: hintColorLight),
+                                style: context.font12.copyWith(color: Theme.of(context).hintColor),
                               ),
                             ],
                           ),

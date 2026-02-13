@@ -115,10 +115,10 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
                               duration: const Duration(milliseconds: 200),
                               padding: EdgeInsets.symmetric(horizontal: 12.sp, vertical: 8.sp),
                               decoration: BoxDecoration(
-                                color: isSelected ? category.color.withValues(alpha: 0.2) : cardColorLight,
+                                color: isSelected ? category.color.withValues(alpha: 0.2) : Theme.of(context).cardColor,
                                 borderRadius: AppRadius.circular8,
                                 border: Border.all(
-                                  color: isSelected ? category.color : dividerColorLight,
+                                  color: isSelected ? category.color : Theme.of(context).dividerColor,
                                   width: 1.5.sp,
                                 ),
                               ),
@@ -131,7 +131,7 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
                                     category.displayName,
                                     style: context.font12.copyWith(
                                       fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
-                                      color: isSelected ? category.color : null,
+                                      color: isSelected ? category.color : Theme.of(context).textTheme.bodyMedium?.color,
                                     ),
                                   ),
                                 ],
@@ -156,11 +156,11 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
                           padding: EdgeInsets.symmetric(horizontal: 12.sp, vertical: 14.sp),
                           decoration: BoxDecoration(
                             borderRadius: AppRadius.circular8,
-                            border: Border.all(color: dividerColorLight),
+                            border: Border.all(color: Theme.of(context).dividerColor),
                           ),
                           child: Row(
                             children: [
-                              Icon(Iconsax.calendar_1, size: 20.sp, color: hintColorLight),
+                              Icon(Iconsax.calendar_1, size: 20.sp, color: Theme.of(context).hintColor),
                               SizedBox(width: 10.sp),
                               Text(
                                 DateFormat('MMM dd, yyyy').format(date),
