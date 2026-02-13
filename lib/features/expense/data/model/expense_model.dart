@@ -7,6 +7,9 @@ class ExpenseModel {
   final ExpenseCategory category;
   final DateTime date;
   final String? note;
+  final double vatPercent;
+  final String paymentMethod;
+  final bool isIncome;
 
   ExpenseModel({
     required this.id,
@@ -15,6 +18,9 @@ class ExpenseModel {
     required this.category,
     required this.date,
     this.note,
+    this.vatPercent = 0.0,
+    this.paymentMethod = 'Cash',
+    this.isIncome = false,
   });
 
   factory ExpenseModel.fromJson(Map<String, dynamic> json) {
@@ -25,6 +31,9 @@ class ExpenseModel {
       category: ExpenseCategory.fromString(json['category']),
       date: DateTime.parse(json['date']),
       note: json['note'],
+      vatPercent: (json['vat_percent'] as num?)?.toDouble() ?? 0.0,
+      paymentMethod: json['payment_method'] ?? 'Cash',
+      isIncome: json['is_income'] ?? false,
     );
   }
 
@@ -35,5 +44,8 @@ class ExpenseModel {
         'category': category.value,
         'date': date.toIso8601String(),
         'note': note,
+        'vat_percent': vatPercent,
+        'payment_method': paymentMethod,
+        'is_income': isIncome,
       };
 }

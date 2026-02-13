@@ -16,6 +16,7 @@ class ExpenseController extends GetxController implements GetxService {
     update();
   }
 
+  List<ExpenseModel> _allExpenses = [];
   List<ExpenseModel> _expenses = [];
   List<ExpenseModel> get expenses => _expenses;
 
@@ -24,6 +25,15 @@ class ExpenseController extends GetxController implements GetxService {
 
   Map<ExpenseCategory, double> _categoryTotals = {};
   Map<ExpenseCategory, double> get categoryTotals => _categoryTotals;
+
+  DateTime _selectedMonth = DateTime.now();
+  DateTime get selectedMonth => _selectedMonth;
+
+  DateTime _selectedDate = DateTime.now();
+  DateTime get selectedDate => _selectedDate;
+
+  double _budgetPercent = 0.6;
+  double get budgetPercent => _budgetPercent;
 
   @override
   void onInit() {
@@ -34,10 +44,9 @@ class ExpenseController extends GetxController implements GetxService {
   void loadExpenses() {
     try {
       isLoading = true;
-      _expenses = service.getExpenses();
-      _expenses.sort((a, b) => b.date.compareTo(a.date));
-      _totalExpenses = service.getTotalExpenses(_expenses);
-      _categoryTotals = service.getCategoryTotals(_expenses);
+      _allExpenses = service.getExpenses();
+      _allExpenses.sort((a, b) => b.date.compareTo(a.date));
+      _filterByMonth();
       isLoading = false;
     } catch (e) {
       showToast('Failed to load expenses: $e');
@@ -45,10 +54,58 @@ class ExpenseController extends GetxController implements GetxService {
     }
   }
 
-  Future<void> addExpense(String title, double amount, ExpenseCategory category, DateTime date, String? note) async {
+  void _filterByMonth() {
+    _expenses = _allExpenses.where((e) {
+      return e.date.year == _selectedMonth.year && e.date.month == _selectedMonth.month;
+    }).toList();
+    _totalExpenses = service.getTotalExpenses(_expenses);
+    _categoryTotals = service.getCategoryTotals(_expenses);
+
+    // Budget percent (placeholder — total / 2700 budget)
+    _budgetPercent = _totalExpenses > 0 ? (_totalExpenses / 2700).clamp(0.0, 1.0) : 0.0;
+  }
+
+  void selectMonth(DateTime month) {
+    _selectedMonth = month;
+    _filterByMonth();
+    update();
+  }
+
+  void nextMonth() {
+    selectMonth(DateTime(_selectedMonth.year, _selectedMonth.month + 1));
+  }
+
+  void previousMonth() {
+    selectMonth(DateTime(_selectedMonth.year, _selectedMonth.month - 1));
+  }
+
+  void selectDate(DateTime date) {
+    _selectedDate = date;
+    update();
+  }
+
+  Future<void> addExpense({
+    required String title,
+    required double amount,
+    required ExpenseCategory category,
+    required DateTime date,
+    String? note,
+    double vatPercent = 0.0,
+    String paymentMethod = 'Cash',
+    bool isIncome = false,
+  }) async {
     try {
       isLoading = true;
-      final success = await service.addExpense(title, amount, category, date, note);
+      final success = await service.addExpense(
+        title: title,
+        amount: amount,
+        category: category,
+        date: date,
+        note: note,
+        vatPercent: vatPercent,
+        paymentMethod: paymentMethod,
+        isIncome: isIncome,
+      );
       if (success) {
         loadExpenses();
         showToast('Expense added');

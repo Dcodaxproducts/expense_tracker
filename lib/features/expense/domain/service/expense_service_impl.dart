@@ -22,7 +22,16 @@ class ExpenseServiceImpl implements ExpenseService {
   }
 
   @override
-  Future<bool> addExpense(String title, double amount, ExpenseCategory category, DateTime date, String? note) async {
+  Future<bool> addExpense({
+    required String title,
+    required double amount,
+    required ExpenseCategory category,
+    required DateTime date,
+    String? note,
+    double vatPercent = 0.0,
+    String paymentMethod = 'Cash',
+    bool isIncome = false,
+  }) async {
     final expenses = getExpenses();
     final expense = ExpenseModel(
       id: DateTime.now().millisecondsSinceEpoch.toString(),
@@ -31,6 +40,9 @@ class ExpenseServiceImpl implements ExpenseService {
       category: category,
       date: date,
       note: note,
+      vatPercent: vatPercent,
+      paymentMethod: paymentMethod,
+      isIncome: isIncome,
     );
     expenses.add(expense);
     return await _saveAll(expenses);
@@ -54,14 +66,16 @@ class ExpenseServiceImpl implements ExpenseService {
 
   @override
   double getTotalExpenses(List<ExpenseModel> expenses) {
-    return expenses.fold(0.0, (sum, e) => sum + e.amount);
+    return expenses.fold(0.0, (sum, e) => e.isIncome ? sum : sum + e.amount);
   }
 
   @override
   Map<ExpenseCategory, double> getCategoryTotals(List<ExpenseModel> expenses) {
     final Map<ExpenseCategory, double> totals = {};
     for (final expense in expenses) {
-      totals[expense.category] = (totals[expense.category] ?? 0) + expense.amount;
+      if (!expense.isIncome) {
+        totals[expense.category] = (totals[expense.category] ?? 0) + expense.amount;
+      }
     }
     return totals;
   }
