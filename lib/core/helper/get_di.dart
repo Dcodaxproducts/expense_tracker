@@ -7,6 +7,7 @@ import 'package:expense_tracker/core/utils/app_constants.dart';
 import '../../features/language/domain/binding/language_binding.dart';
 import '../../features/splash/domain/binding/splash_binding.dart';
 import '../../features/expense/domain/binding/expense_binding.dart';
+import '../../features/account/domain/binding/account_binding.dart';
 import '../api/api_client_impl.dart';
 import '../api/api_client.dart';
 import '../../features/language/data/model/language.dart';
@@ -18,7 +19,7 @@ Future<Map<String, Map<String, String>>> init() async {
   ApiClient apiClient = ApiClientImpl(prefs: Get.find(), baseUrl: AppConstants.baseUrl);
   Get.lazyPut(() => apiClient);
 
-  List<Bindings> bindings = [ThemeBinding(), LanguageBinding(), SplashBinding(), ExpenseBinding()];
+  List<Bindings> bindings = [ThemeBinding(), LanguageBinding(), SplashBinding(), ExpenseBinding(), AccountBinding()];
 
   for (Bindings binding in bindings) {
     binding.dependencies();

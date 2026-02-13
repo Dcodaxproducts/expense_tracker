@@ -5,6 +5,7 @@ import 'package:expense_tracker/features/expense/presentation/controller/expense
 import 'package:expense_tracker/features/expense/presentation/view/add_expense_screen.dart';
 import 'package:expense_tracker/features/expense/presentation/widgets/expense_card.dart';
 import 'package:expense_tracker/features/expense/presentation/widgets/category_summary_chip.dart';
+import 'package:expense_tracker/features/account/presentation/view/accounts_screen.dart';
 import 'package:intl/intl.dart';
 
 class ExpenseDashboardScreen extends StatefulWidget {
@@ -26,6 +27,13 @@ class _ExpenseDashboardScreenState extends State<ExpenseDashboardScreen> {
               style: context.font20.copyWith(fontWeight: FontWeight.w700),
             ),
             centerTitle: true,
+            actions: [
+              IconButton(
+                icon: Icon(Iconsax.bank, size: 22.sp),
+                onPressed: () => launchScreen(const AccountsScreen()),
+                tooltip: 'Accounts',
+              ),
+            ],
           ),
           floatingActionButton: FloatingActionButton(
             backgroundColor: primaryColor,
